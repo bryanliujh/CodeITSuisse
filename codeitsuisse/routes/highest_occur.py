@@ -19,4 +19,4 @@ def check():
     i = word_count.values().index(maxi)
     result = word_count.items()[i]
     logging.info("My result :{}".format(result))
-    return json.dump(result);
+    return json.dumps(result);
