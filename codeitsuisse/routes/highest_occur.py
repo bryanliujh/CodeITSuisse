@@ -21,4 +21,4 @@ def check():
             result = k
             break
     logging.info("My result :{}".format(result))
-    return jsonify(result);
+    return json.dumps(word_count);
