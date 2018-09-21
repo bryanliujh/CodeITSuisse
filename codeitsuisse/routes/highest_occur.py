@@ -14,9 +14,9 @@ def check():
     logging.info("data sent for evaluation {}".format(data))
     inputString = data.get("string")
     result = inputString
-    #word_count = Counter(inputString)
-    #maxi = max(word_count.values())
-    #i = word_count.values().index(maxi)
-    #result = word_count.items()[i]
+    word_count = Counter(inputString)
+    maxi = max(word_count.values())
+    i = word_count.values().index(maxi)
+    result = word_count.items()[i]
     logging.info("My result :{}".format(result))
     return jsonify(result);
