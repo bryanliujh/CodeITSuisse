@@ -1,0 +1,13 @@
+-to commit and push/pull to heroku
+git commit -m message
+git pull 
+git rebase
+
+
+-install library in venv (optional)
+
+cd venv/Scripts
+activate
+python -m pip install library_name
+pip freeze > requirements.txt
+copy requirements.txt to root folder

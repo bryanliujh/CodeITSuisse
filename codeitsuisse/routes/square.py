@@ -15,7 +15,6 @@ def evaluate():
     inputValue = data.get("input")
     result = inputValue * inputValue * inputValue
     logging.info("My result :{}".format(result))
-    dictResult = {result}
     return jsonify(result);
 
 
