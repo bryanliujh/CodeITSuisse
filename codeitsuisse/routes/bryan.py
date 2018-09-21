@@ -6,7 +6,7 @@ from flask import request, jsonify;
 from codeitsuisse import app;
 
 @app.route('/bryan', methods=['GET'])
-def evaluate():
+def bryanliu():
 
 
     return jsonify(username="bryan",
