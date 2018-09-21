@@ -1,6 +1,6 @@
 import logging
 
-from flask import request, jsonify;
+from flask import request, jsonify
 
 from codeitsuisse import app;
 
@@ -11,10 +11,10 @@ logger = logging.getLogger(__name__)
 def evaluate():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
-    inputValue = data.get("input")
-    result = inputValue * inputValue
+    input_value = data.get("input")
+    result = input_value * input_value
     logging.info("My result :{}".format(result))
-    return jsonify(result);
+    return jsonify(result)
 
 
 
