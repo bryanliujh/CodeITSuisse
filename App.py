@@ -2,7 +2,6 @@ import logging
 from codeitsuisse import app
 from codeitsuisse.routes import square
 from codeitsuisse.routes import bryan
-from codeitsuisse.routes import highest_occur
 logger = logging.getLogger(__name__)
 
 @app.route('/', methods=['GET'])
