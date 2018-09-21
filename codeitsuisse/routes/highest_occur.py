@@ -16,7 +16,10 @@ def check():
     result = inputString
     word_count = Counter(inputString)
     maxi = max(word_count.values())
-    i = word_count.values().index(maxi)
-    result = word_count.items()[i]
-    logging.info("My result :{}".format(result))
-    return json.dumps(result);
+    for k, v in word_count.items():
+        if v == maxi:
+            str1 = k
+            str2 = v
+            break
+    logging.info("My result :{}".format(str1, str2))
+    return json.dumps(str1, str2);
