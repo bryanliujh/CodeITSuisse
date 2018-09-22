@@ -68,5 +68,6 @@ def tally_expense():
         item['amount'] = myamount
 
     output = {"transactions": transactions}
+    logging.info(output)
 
     return jsonify(output)

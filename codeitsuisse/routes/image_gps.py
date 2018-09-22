@@ -6,7 +6,7 @@ import requests
 import os.path
 import random
 from codeitsuisse.routes import ImageMetaData
-import urllib.request
+#import urllib.request
 from flask import request, jsonify;
 
 from codeitsuisse import app;
@@ -17,9 +17,7 @@ logger = logging.getLogger(__name__)
 def image_gps():
 
 
-
-
-
+    '''
     data = request.get_json()
     logging.info(data)
     mydict = {}
@@ -43,9 +41,9 @@ def image_gps():
         mydict['long'] = longitude
         myarr.append(mydict.copy())
     teststring = jsonify(myarr)
+    '''
 
 
-
-    return teststring;
+    return "hi";
 
 
