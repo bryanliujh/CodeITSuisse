@@ -15,26 +15,21 @@ def prime_sum():
     remain = input_value
     output = []
     check = 0
+    if remain <= 0:
+        output.append(remain)
     while remain > 0:
         if remain == 1:
             output.append(remain)
             break
         for big in range(remain, 1, -1):
-            logging.info(math.sqrt(big))
             for i in range(2, int(math.sqrt(big))+1, 1):
-                logging.info(i)
                 if big % i == 0:
-                    logging.info("yes")
                     check = 1
-                    logging.info(check)
                     break
-            logging.info(check)
             if check == 0:
-                logging.info("big is  prime")
                 output.append(big)
                 remain = remain - big
                 break
             else:
-                logging.info("big is not prime")
                 check = 0
     return jsonify(output)
