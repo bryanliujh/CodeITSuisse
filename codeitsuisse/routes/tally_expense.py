@@ -1,10 +1,8 @@
 import logging
-import math
-import json
 
 from flask import request, jsonify
 
-from codeitsuisse import app;
+from codeitsuisse import app
 
 logger = logging.getLogger(__name__)
 
