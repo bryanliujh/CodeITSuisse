@@ -3,11 +3,24 @@ from codeitsuisse import  app
 from codeitsuisse.routes import square
 from codeitsuisse.routes import bryan
 logger = logging.getLogger(__name__)
+import logging
+import json
+import exifread
+from PIL import Image
+import requests
+from io import BytesIO
+
+from flask import request, jsonify;
 
 @app.route('/', methods=['GET'])
 def default_route():
+    #data = request.get_json()
+    #inputValue = data.get("path")
 
-    return bryan.bryanliu();
+
+    teststr = "hi"
+
+    return jsonify(teststr);
 
 if __name__ == "__main__":
     logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")
@@ -24,5 +37,6 @@ if __name__ == "__main__":
     rootLogger.addHandler(consoleHandler)
 
     logger.info("Starting application ...")
-    app.run()
+
+    app.run(debug=True)
 
