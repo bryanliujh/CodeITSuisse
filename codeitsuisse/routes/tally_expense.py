@@ -23,7 +23,7 @@ def tally_expense():
         need_to_pay[p] = 0  # negative number means need_to_receive
     for e in expenses:
         paid_by = e.get("paidBy")
-        amount = round(e.get("amount"),2)
+        amount = e.get("amount")
         person_paid[paid_by] += amount
         if len(e) == 4:
             exclude = e.get("exclude")
@@ -61,6 +61,12 @@ def tally_expense():
                         need_to_pay[key1] -= transaction['amount']
 
                         transactions.append(transaction)
+
+
+    for item in transactions:
+        myamount = round(item['amount'],2)
+        item['amount'] = myamount
+
     output = {"transactions": transactions}
 
     return jsonify(output)
