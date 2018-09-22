@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 @app.route('/tally-expense', methods=['POST'])
 def tally_expense():
     data = request.get_json()
+    logging.info(data)
     persons = data.get("persons")
     num_of_persons = len(persons)
     expenses = data.get("expenses")
