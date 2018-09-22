@@ -16,7 +16,7 @@ def air_traffic_controller():
     logging.info(static)
     reserve_time = static['ReserveTime']
     logging.info(reserve_time)
-    reserve_minute = int(reserve_time) / 60
+    reserve_minute = float(reserve_time) / 60
     sorted_flights = sorted(flights, key=lambda i: i['Time'])
     logging.info(sorted_flights)
     i = 0
@@ -26,8 +26,8 @@ def air_traffic_controller():
         minute_i = str(sorted_flights[i]["Time"])[2:]
         logging.info(hour_i)
         logging.info(minute_i)
-        limit_minute = int(minute_i) + reserve_minute
-        limit_hour = int(hour_i)
+        limit_minute = float(minute_i) + reserve_minute
+        limit_hour = float(hour_i)
         if limit_minute > 60:
             limit_minute = limit_minute - 60
             limit_hour = limit_hour + 1
