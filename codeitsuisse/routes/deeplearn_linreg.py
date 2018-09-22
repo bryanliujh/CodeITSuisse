@@ -30,4 +30,4 @@ def kk():
     for i in range(0, 3):
         result += C[i] * q[i]
 
-    return jsonify(int(result))
+    return jsonify("answer: " + result)
