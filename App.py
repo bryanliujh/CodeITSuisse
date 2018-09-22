@@ -7,8 +7,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/', methods=['GET'])
 def default_route():
-
-    return bryan.bryanliu();
+    return bryan.bryanliu()
 
 
 logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")
@@ -25,5 +24,5 @@ consoleHandler.setFormatter(logFormatter)
 rootLogger.addHandler(consoleHandler)
 
 logger.info("Starting application ...")
-app.run()
+# app.run()
 
