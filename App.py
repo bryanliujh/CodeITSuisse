@@ -9,20 +9,20 @@ def default_route():
 
     return bryan.bryanliu();
 
-if __name__ == "__main__":
-    logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")
-    rootLogger = logging.getLogger()
 
-    rootLogger.setLevel(logging.INFO)
+logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")
+rootLogger = logging.getLogger()
 
-    fileHandler = logging.FileHandler("team.log")
-    fileHandler.setFormatter(logFormatter)
-    rootLogger.addHandler(fileHandler)
+rootLogger.setLevel(logging.INFO)
 
-    consoleHandler = logging.StreamHandler()
-    consoleHandler.setFormatter(logFormatter)
-    rootLogger.addHandler(consoleHandler)
+fileHandler = logging.FileHandler("team.log")
+fileHandler.setFormatter(logFormatter)
+rootLogger.addHandler(fileHandler)
 
-    logger.info("Starting application ...")
-    app.run()
+consoleHandler = logging.StreamHandler()
+consoleHandler.setFormatter(logFormatter)
+rootLogger.addHandler(consoleHandler)
+
+logger.info("Starting application ...")
+app.run()
 
