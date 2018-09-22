@@ -17,7 +17,9 @@ def customer_hotel():
     for i in range(2,len(my_sorted_array)):
         min_diff = min(min_diff, my_sorted_array[i]-my_sorted_array[i-1])
 
-    return str(min_diff)
+    my_dic = {"answer": min_diff}
+
+    return jsonify(my_dic)
 
 
 
