@@ -62,11 +62,13 @@ def dino():
     while counter > 0:
         for i in range(x, types):
             sum += twod_list[i][int(binary_list[bit_count])]
+            print("bit_count: %s" % bit_count)
             bit_count += 1
 
         while counter2 > 0:
             for j in range(y, types*2):
                 sumsum += twod_list[j][int(another_binary_list[another_bit_count])]
+                print("another_bit_count: %s" % another_bit_count)
                 another_bit_count += 1
             if abs(sum - sumsum) <= max_diff:
                 good += 1
