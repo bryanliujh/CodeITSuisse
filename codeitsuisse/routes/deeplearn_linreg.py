@@ -8,7 +8,7 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 
-@app.route('//machine-learning/question-1', methods=['POST'])
+@app.route('/machine-learning/question-1', methods=['POST'])
 def kk():
     data = request.get_json()
     i = data.get("input")
