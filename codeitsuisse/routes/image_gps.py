@@ -40,7 +40,7 @@ def image_gps():
         latitude = latlng[0]
         longitude = latlng[1]
         mydict['lat'] = latitude
-        mydict['lon'] = longitude
+        mydict['long'] = longitude
         myarr.append(mydict.copy())
     teststring = jsonify(myarr)
 
