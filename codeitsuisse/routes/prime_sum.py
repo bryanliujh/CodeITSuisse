@@ -30,7 +30,7 @@ def prime_sum():
                     break
             logging.info(check)
             if check == 0:
-                logging.info("big is prime")
+                logging.info("big is  prime")
                 output.append(big)
                 remain = remain - big
                 break
