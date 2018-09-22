@@ -61,6 +61,6 @@ def tally_expense():
                         need_to_pay[key2] = 0
                         need_to_pay[key1] -= transaction['amount']
                         transactions.append(transaction)
-    output = {}
-    output['transactions'] = jsonify(transactions)
-    return jsonify(transactions)
+    output = {"transactions": transactions}
+
+    return jsonify(output)
