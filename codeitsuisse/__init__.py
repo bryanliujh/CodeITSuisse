@@ -9,3 +9,4 @@ import codeitsuisse.routes.air_traffic_controller
 import codeitsuisse.routes.image_gps
 import codeitsuisse.routes.dino
 import codeitsuisse.routes.sorting_game
+import codeitsuisse.routes.deeplearn_linreg

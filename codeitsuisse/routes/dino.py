@@ -23,12 +23,6 @@ def dino():
 
     max_diff = data.get("maximum_difference_for_calories")
 
-    if (max_diff < 0) or (max_diff > 200000):
-        end()
-
-    if (types < 0) or (types > 200):
-        end()
-
     k = 0
     twod_list = []
     for i in range(0, types*2):
@@ -40,11 +34,6 @@ def dino():
             if j == 1:
                 twod_list_two.append(0)
         twod_list.append(twod_list_two)
-
-    for i in range(0, types*2):
-        for j in range(0, 2):
-            if (twod_list[i][j] < 0) or (twod_list[i][j] > 2000):
-                end()
 
     bit_string = ""
     j = """'{0:0""" + str(types) + """b}'"""
