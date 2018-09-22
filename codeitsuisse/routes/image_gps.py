@@ -22,6 +22,8 @@ def image_gps():
 
     data = request.get_json()
     mydict = {}
+    myarr = []
+    i = 0
     for my_item in data:
         jsonitem = my_item['path']
         file_name = random.randrange(1,10000)
@@ -38,8 +40,8 @@ def image_gps():
         longitude = latlng[1]
         mydict['lat'] = latitude
         mydict['lon'] = longitude
-
-    teststring = jsonify(mydict)
+        myarr.append(mydict.copy())
+    teststring = jsonify(myarr)
 
     return teststring;
 
