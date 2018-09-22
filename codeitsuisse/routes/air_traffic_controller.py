@@ -10,11 +10,15 @@ logger = logging.getLogger(__name__)
 @app.route('/airtrafficcontroller', methods=['POST'])
 def air_traffic_controller():
     data = request.get_json()
+    logging.info(data)
     flights = data.get("Flights")
     logging.info(flights)
     static = data.get("Static")
     logging.info(static)
     reserve_time = static['ReserveTime']
+    if len(static) == 2:
+        runways = static['Runways']
+        logging.info(runways)
     logging.info(reserve_time)
     reserve_minute = float(reserve_time) / 60
     reserve_minute = int(reserve_minute)
@@ -22,11 +26,8 @@ def air_traffic_controller():
     logging.info(sorted_flights)
     i = 0
     while i < len(sorted_flights):
-        logging.info(sorted_flights[i]["Time"])
         hour_i = str(sorted_flights[i]["Time"])[0:2]
         minute_i = str(sorted_flights[i]["Time"])[2:]
-        logging.info(hour_i)
-        logging.info(minute_i)
         limit_minute = int(minute_i) + reserve_minute
         limit_hour = int(hour_i)
         if limit_minute > 60:
@@ -41,7 +42,6 @@ def air_traffic_controller():
         else:
             limit_minute_str = str(limit_minute)
         limit_time = limit_hour_str + limit_minute_str
-        logging.info(limit_time)
         j = i + 1
         while j < len(sorted_flights):
             if str(sorted_flights[j]["Time"]) < limit_time:
