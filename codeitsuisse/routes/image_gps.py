@@ -21,6 +21,7 @@ def image_gps():
 
 
     data = request.get_json()
+    logging.info(data)
     mydict = {}
     myarr = []
     i = 0
