@@ -11,9 +11,12 @@ logger = logging.getLogger(__name__)
 def sorting_game():
     myarr = []
     data = request.get_json()
+    i = 0
     for item_arr in data["puzzle"]:
+        i = i + 1
         for item in item_arr:
             myarr.append(item)
+
             '''
             if item == 0:
                 index_no = item_arr.index(0)
@@ -21,18 +24,26 @@ def sorting_game():
             '''
     logging.info(myarr)
     text = np.array(myarr)
-    init_state = text.reshape((3,3))
 
-    goal_state = np.array([[1, 2, 3],
-                           [4, 5, 6],
-                           [7, 8, 0]])
+    if i == 3:
+        init_state = text.reshape((3,3))
 
+        goal_state = np.array([[1, 2, 3],
+                               [4, 5, 6],
+                               [7, 8, 0]])
+    else:
+        init_state = text.reshape((4, 4))
+
+        goal_state = np.array([[1, 2, 3, 4],
+                               [5, 6, 7, 8],
+                               [9, 10, 11, 12],
+                               [13, 14, 15, 0]])
 
     heuristic = "manhattan"
     max_iter = 10000
 
     #logging.info(A_star(init_state, goal_state, max_iter, heuristic))
-    my_array = np.array(A_star(init_state, goal_state, max_iter, heuristic), dtype=int).tolist()
+    my_array = A_star(init_state, goal_state, max_iter, heuristic)
     new_dic = {"result": my_array}
     logging.info(new_dic)
 
@@ -76,7 +87,7 @@ def A_star(init_state, goal_state, max_iter, heuristic):
         new_pos = init_state[cur_i, cur_j]
         # 0
         old_pos = init_state[init_i, init_j]
-        path_arr.append(init_state[cur_i, cur_j])
+        path_arr.append(int(init_state[cur_i, cur_j]))
         init_state[init_i, init_j] = new_pos
         init_state[cur_i, cur_j] = old_pos
 
