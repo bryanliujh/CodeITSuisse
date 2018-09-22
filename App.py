@@ -1,5 +1,5 @@
 import logging
-from codeitsuisse import  app
+from codeitsuisse import app
 from codeitsuisse.routes import square
 from codeitsuisse.routes import bryan
 logger = logging.getLogger(__name__)
