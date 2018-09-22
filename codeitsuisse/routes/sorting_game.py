@@ -17,11 +17,7 @@ def sorting_game():
         for item in item_arr:
             myarr.append(item)
 
-            '''
-            if item == 0:
-                index_no = item_arr.index(0)
-                logging.info(index_no)
-            '''
+
     logging.info(myarr)
     text = np.array(myarr)
 
@@ -47,12 +43,7 @@ def sorting_game():
     new_dic = {"result": my_array}
     logging.info(new_dic)
 
-    ''''
-    logging.info(matrix_arr)
-    i, j = np.where(matrix_arr == 0)
-    logging.info(i)
-    logging.info(j)
-    '''
+
     return jsonify(new_dic)
 
 
@@ -91,17 +82,9 @@ def A_star(init_state, goal_state, max_iter, heuristic):
         init_state[init_i, init_j] = new_pos
         init_state[cur_i, cur_j] = old_pos
 
-
-
-
-
         init_i, init_j = cur_i, cur_j
 
-        '''
-        for i in range(goal_state.shape[0]):
-            print(np.array(node.get_state()).reshape(goal_state.shape[0], goal_state.shape[0])[i, :])
-        print()
-        '''
+
     return path_arr
 
 
