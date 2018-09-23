@@ -59,7 +59,15 @@ def tally_expense():
                         transaction['amount'] = -(need_to_pay[key2])
                         need_to_pay[key2] = 0
                         need_to_pay[key1] -= transaction['amount']
+
                         transactions.append(transaction)
+
+
+    for item in transactions:
+        myamount = round(item['amount'],2)
+        item['amount'] = myamount
+
     output = {"transactions": transactions}
+    logging.info(output)
 
     return jsonify(output)

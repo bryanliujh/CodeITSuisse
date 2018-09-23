@@ -8,4 +8,3 @@ import codeitsuisse.routes.tally_expense
 import codeitsuisse.routes.air_traffic_controller
 import codeitsuisse.routes.image_gps
 import codeitsuisse.routes.dino
-import codeitsuisse.routes.minimum_camps
