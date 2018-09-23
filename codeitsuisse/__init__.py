@@ -7,7 +7,6 @@ import codeitsuisse.routes.prime_sum
 import codeitsuisse.routes.tally_expense
 import codeitsuisse.routes.air_traffic_controller
 import codeitsuisse.routes.image_gps
-import codeitsuisse.routes.dino
 import codeitsuisse.routes.sorting_game
 import codeitsuisse.routes.customer_hotel
 import codeitsuisse.routes.broadcaster
