@@ -32,7 +32,7 @@ def image_gps():
         script_dir = os.path.join(os.path.dirname(__file__), full_file_name)
 
         myimg = urllib.request.urlretrieve(jsonitem, script_dir)
-        #full_file_name = 'testgeo.jpg'
+        #full_file_name = 'testgeo'
         meta_data = ImageMetaData.ImageMetaData(script_dir)
         latlng = meta_data.get_lat_lng()
         latitude = latlng[0]
