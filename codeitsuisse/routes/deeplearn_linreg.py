@@ -35,5 +35,5 @@ def kk():
         result += C[i] * q[i]
 
     return jsonify({
-      "answer": int(result)
+      "answer": result
     })
