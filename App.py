@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/', methods=['GET'])
 def default_route():
-    return dino.dino()
+    return deeplearn_linreg.kk()
 
 
 logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")
@@ -27,5 +27,5 @@ rootLogger.addHandler(consoleHandler)
 
 logger.info("Starting application ...")
 # comment out when push to heroku
-# app.run()
+app.run()
 
