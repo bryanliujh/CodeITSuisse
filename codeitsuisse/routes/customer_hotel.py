@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 @app.route('/customers-and-hotel/minimum-distance', methods=['POST'])
-def customer_hotel():
+def customer_hotel_dist():
     data = request.get_json()
     my_array = data
     my_sorted_array = sorted(my_array)
@@ -20,6 +20,8 @@ def customer_hotel():
     my_dic = {"answer": min_diff}
 
     return jsonify(my_dic)
+
+
 
 
 

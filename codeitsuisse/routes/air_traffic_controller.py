@@ -20,8 +20,7 @@ def air_traffic_controller():
         runways = static['Runways']
         logging.info(runways)
     logging.info(reserve_time)
-    reserve_minute = float(reserve_time) / 60
-    reserve_minute = int(reserve_minute)
+    reserve_minute = int(reserve_time) / 60
     sorted_flights = sorted(flights, key=lambda i: i['Time'])
     logging.info(sorted_flights)
     i = 0

@@ -19,7 +19,8 @@ def prime_sum():
         output.append(remain)
     while remain > 0:
         if remain == 1:
-            output.append(remain)
+            output[0] = output[0] - 1
+            output.append(remain+1)
             break
         for big in range(remain, 1, -1):
             for i in range(2, int(math.sqrt(big))+1, 1):

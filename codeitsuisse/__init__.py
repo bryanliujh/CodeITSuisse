@@ -10,3 +10,4 @@ import codeitsuisse.routes.image_gps
 import codeitsuisse.routes.dino
 import codeitsuisse.routes.sorting_game
 import codeitsuisse.routes.customer_hotel
+import codeitsuisse.routes.broadcaster

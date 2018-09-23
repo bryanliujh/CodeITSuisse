@@ -25,5 +25,5 @@ rootLogger.addHandler(consoleHandler)
 
 logger.info("Starting application ...")
 # comment out when push to heroku
-#app.run()
+app.run()
 
