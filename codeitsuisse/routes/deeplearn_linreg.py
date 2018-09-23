@@ -22,17 +22,15 @@ def kk():
                   [i[4][0], i[4][1], i[4][2]]])
 
     B = np.array([o[0], o[1], o[2], o[3], o[4]])
+    C = np.linalg.lstsq(A, B)[0]
 
-
-    #C = np.linalg.lstsq(A, B)[0]
-
-    C = np.linalg.pinv(A)
-    D = np.dot(C, B)
+    #C = np.linalg.pinv(A)
+    #D = np.dot(C, B)
 
     result = 0
 
     for i in range(0, 3):
-        result += D[i] * q[i]
+        result += C[i] * q[i]
 
     return jsonify({
       "answer": int(result)

@@ -3,12 +3,13 @@ from codeitsuisse import app
 from codeitsuisse.routes import square
 from codeitsuisse.routes import bryan
 from codeitsuisse.routes import deeplearn_linreg
+from codeitsuisse.routes import dino
 logger = logging.getLogger(__name__)
 
 
 @app.route('/', methods=['GET'])
 def default_route():
-    return deeplearn_linreg.kk()
+    return dino.dino()
 
 
 logFormatter = logging.Formatter("%(asctime)s [%(filename)s] [%(funcName)s] [%(lineno)d] [%(levelname)-5.5s]  %(message)s")

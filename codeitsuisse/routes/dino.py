@@ -7,6 +7,8 @@ from codeitsuisse import app;
 
 logger = logging.getLogger(__name__)
 
+n = 0
+nn = 0
 
 @app.route('/two-dinosaurs', methods=['POST'])
 def dino():
@@ -35,6 +37,7 @@ def dino():
                 twod_list_two.append(0)
         twod_list.append(twod_list_two)
 
+    '''
     bit_string = ""
     j = """'{0:0""" + str(types) + """b}'"""
     for i in range(0, 2**types):
@@ -48,6 +51,13 @@ def dino():
     bit_count = 0
     another_binary_list = binary_list.copy()
     another_bit_count = 0
+    '''
+
+
+    fora = """'{0:0""" + str(types) + """b}'"""
+    num_count = 0
+    num_count_n = 0
+    fixed = types
 
     good = 0
     sum = 0
@@ -61,28 +71,53 @@ def dino():
 
     while counter > 0:
         for i in range(x, types):
-            sum += twod_list[i][int(binary_list[bit_count])]
-            print("bit_count: %s" % bit_count)
-            bit_count += 1
+            x = int(return_bit(fora)[num_count % fixed])
+            sum += twod_list[i][x]
+            num_count += 1
+            # sum += twod_list[i][int(binary_list[bit_count])]
+            # print("bit_count: %s" % bit_count)
+            # bit_count += 1
 
         while counter2 > 0:
             for j in range(y, types*2):
-                sumsum += twod_list[j][int(another_binary_list[another_bit_count])]
-                print("another_bit_count: %s" % another_bit_count)
-                another_bit_count += 1
+                y = int(return_bit_n(fora)[num_count_n % fixed])
+                sumsum += twod_list[j][y]
+                num_count_n += 1
+                # sumsum += twod_list[j][int(another_binary_list[another_bit_count])]
+                # print("another_bit_count: %s" % another_bit_count)
+                # another_bit_count += 1
             if abs(sum - sumsum) <= max_diff:
                 good += 1
             y = types
             sumsum = 0
             counter2 -= 1
 
-        another_bit_count = 0
+            global nn
+            nn += 1
+
+        # another_bit_count = 0
+        num_count_n = 0
         x = 0
         sum = 0
         counter -= 1
         counter2 = 2**types
+        nn = 0
+
+        global n
+        n += 1
 
     return jsonify(good % 100000123);
 
 
+def return_bit(fora):
+    global n
+    bit_string = fora.format(n)
+    new_bit_string = bit_string.replace("'","")
+    return new_bit_string
 
+
+def return_bit_n(fora):
+    global nn
+    bit_string = fora.format(nn)
+    new_bit_string = bit_string.replace("'","")
+    return new_bit_string
