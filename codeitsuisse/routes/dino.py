@@ -106,7 +106,9 @@ def dino():
         global n
         n += 1
 
-    return jsonify(good % 100000123);
+    return jsonify({
+      "result": good % 100000123
+    })
 
 
 def return_bit(fora):
