@@ -3,7 +3,7 @@ import math
 
 from flask import request, jsonify
 
-from codeitsuisse import app;
+from codeitsuisse import app
 
 logger = logging.getLogger(__name__)
 
@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 @app.route('/prime-sum', methods=['POST'])
 def prime_sum():
     data = request.get_json()
+    logging.info(data)
     input_value = data.get("input")
     remain = input_value
     output = []
