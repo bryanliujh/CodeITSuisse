@@ -3,7 +3,6 @@ from codeitsuisse import app
 from codeitsuisse.routes import square
 from codeitsuisse.routes import bryan
 from codeitsuisse.routes import deeplearn_linreg
-from codeitsuisse.routes import dino
 logger = logging.getLogger(__name__)
 
 
@@ -27,5 +26,5 @@ rootLogger.addHandler(consoleHandler)
 
 logger.info("Starting application ...")
 # comment out when push to heroku
-app.run()
+# app.run()
 
